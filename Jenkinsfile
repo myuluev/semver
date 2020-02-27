@@ -8,9 +8,9 @@ pipeline {
         ])
 
         BN = VersionNumber([
-                versionNumberString :'${BUILD_MONTH}.${BUILDS_TODAY}.${BUILD_NUMBER}',
-                projectStartDate : '2017-02-09',
-                versionPrefix : 'v1.'
+        versionNumberString :'${BUILD_MONTH}.${BUILDS_TODAY}.${BUILD_NUMBER}',
+        projectStartDate : '2017-02-09',
+        versionPrefix : 'v1.'
         ])
 
     stages {
