@@ -10,7 +10,7 @@ pipeline {
         VERSION = VersionNumber([
         versionNumberString : '${BUILD_MONTH}.${BUILDS_TODAY}.${BUILD_NUMBER}',
         projectStartDate : '2020-01-01',
-        versionPrefix : 'v1.'
+        versionPrefix : 'v.'
         ])
    }
 
