@@ -1,13 +1,16 @@
 pipeline {
     agent any
     environment {
-            tag = VersionNumber(versionNumberString: '${BUILD_DATE_FORMATTED,"yyyyMMdd"}-develop-${BUILDS_TODAY}');
+            VERSION = VersionNumber([
+                versionNumberString : '1.0.${BUILD_DAY}',
+                projectStartDate : '2020-01-01',
+                PrefixVariable : ''
+                ])
             }
 
         stage ('Restore packages'){
         steps {
-            script{
-            echo "${tag}"
+            sh 'echo "$VERSION"';
          }
       }
    }
