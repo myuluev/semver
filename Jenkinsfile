@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     environment {
       Version_Major = '1'
       Version_Minor  = '0'
