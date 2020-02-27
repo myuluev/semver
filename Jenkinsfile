@@ -6,14 +6,12 @@ pipeline {
         projectStartDate : '2020-01-01',
         PrefixVariable : 'v.'
         ])
-    }
-    environment {
+
         BN = VersionNumber([
-        versionNumberString :'${BUILD_MONTH}.${BUILDS_TODAY}.${BUILD_NUMBER}',
-        projectStartDate : '2017-02-09',
-        versionPrefix : 'v1.'
+                versionNumberString :'${BUILD_MONTH}.${BUILDS_TODAY}.${BUILD_NUMBER}',
+                projectStartDate : '2017-02-09',
+                versionPrefix : 'v1.'
         ])
-    }
 
     stages {
         stage ('Get Version') {
