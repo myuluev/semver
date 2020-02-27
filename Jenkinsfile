@@ -17,15 +17,18 @@ pipeline {
             steps {
                 sh 'echo "$VERSION"';
             }
-        stage('checkout') {
-            dir('${VERSION}')
-            checkout changelog: false, poll: false, scm: [$class: 'GitSCM',
+
+            stage ('checkout') {
+                steps {
+                    dir('${VERSION}')
+                    checkout changelog: false, poll: false, scm: [$class: 'GitSCM',
                                                     branches: [[name: '*/master']],
                                                     doGenerateSubmoduleConfigurations: false,
                                                     extensions: [],
                                                     submoduleCfg: [],
                                                     userRemoteConfigs: [[credentialsId: 'm.uluyev@gmail.com', url: 'https://github.com/myuluev/semver.git']]]
-        }
+                }
+            }
         }
     }
 }
