@@ -1,16 +1,19 @@
 pipeline {
     environment {
-        tag = VersionNumber([
-             versionNumberString :'${BUILD_MONTH}.${BUILDS_TODAY}.${BUILD_NUMBER}',
-             projectStartDate : '2017-02-09',
-             versionPrefix : 'v1.'
-             ])
-    }
+      Version_Major = '1'
+      Version_Minor  = '0'
+      Version_Patch  = '0'
+      VERSION = VersionNumber([
+          versionNumberString: '${Version_Major}.${Version_Minor}.${Version_Patch}.${BUILD_NUMBER}',
+       worstResultForIncrement: 'SUCCESS'
 
-    stages {
-        stage('Variables Print')
-            steps{
-                echo tag
-            }
+      ]);
     }
+        stage ('Restore packages'){
+        steps {
+            script{
+            echo "${VERSION}"
+         }
+      }
+   }
 }
