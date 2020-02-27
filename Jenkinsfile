@@ -5,7 +5,7 @@ pipeline {
         Version_Minor  = '0'
         Version_Patch  = '0'
         VERSION = VersionNumber([
-        versionNumberString : "${Version_Major}.${Version_Minor}.${BUILD_NUMBER}",
+        versionNumberString : "${Version_Major}.${Version_Minor}.${BUILD_NUMBER}.${GIT_REVISION:0:7}",
         projectStartDate : '2020-01-01',
         versionPrefix : 'v.'
         ])
