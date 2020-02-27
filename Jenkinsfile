@@ -6,11 +6,14 @@ pipeline {
                 projectStartDate : '2020-01-01',
                 PrefixVariable : ''
                 ])
-            }
+    }
 
-        stage ('Restore packages'){
-        steps {
-            sh 'echo "$VERSION"';
-         }
-   }
+    stages {
+        stage {
+            steps {
+                sh 'echo "$VERSION"';
+                }
+
+        }
+    }
 }
