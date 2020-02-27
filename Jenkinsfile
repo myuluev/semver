@@ -7,7 +7,7 @@ pipeline {
   //      PrefixVariable : 'v.'
    //     ])
 
-        BN = VersionNumber([
+        VERSION = VersionNumber([
         versionNumberString : '${BUILD_MONTH}.${BUILDS_TODAY}.${BUILD_NUMBER}',
         projectStartDate : '2017-02-09',
         versionPrefix : 'v1.'
@@ -17,8 +17,7 @@ pipeline {
     stages {
         stage ('Get Version') {
             steps {
-   //             sh 'echo "$VERSION"';
-                sh 'echo "$BN"';
+                sh 'echo "$VERSION"';
             }
         }
     }
