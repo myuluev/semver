@@ -8,10 +8,10 @@ pipeline {
         ])
     }
     environment {
-        env.BN = VersionNumber([
-                versionNumberString :'${BUILD_MONTH}.${BUILDS_TODAY}.${BUILD_NUMBER}',
-                projectStartDate : '2017-02-09',
-                versionPrefix : 'v1.'
+        BN = VersionNumber([
+        versionNumberString :'${BUILD_MONTH}.${BUILDS_TODAY}.${BUILD_NUMBER}',
+        projectStartDate : '2017-02-09',
+        versionPrefix : 'v1.'
         ])
     }
 
@@ -19,7 +19,7 @@ pipeline {
         stage ('Get Version') {
             steps {
                 sh 'echo "$VERSION"';
-                sh 'echo "$env.BN"';
+                sh 'echo "$BN"';
             }
 
         }
