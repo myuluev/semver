@@ -9,10 +9,10 @@ pipeline {
     }
 
     stages {
-        stage {
+        stage ('Get Version') {
             steps {
                 sh 'echo "$VERSION"';
-                }
+            }
 
         }
     }
