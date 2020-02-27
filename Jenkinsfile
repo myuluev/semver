@@ -12,6 +12,5 @@ pipeline {
         steps {
             sh 'echo "$VERSION"';
          }
-      }
    }
 }
