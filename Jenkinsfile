@@ -1,14 +1,11 @@
 pipeline {
     agent any
     environment {
-//        VERSION = VersionNumber([
-//        versionNumberString : '1.0.${BUILD_DAY}',
- //       projectStartDate : '2020-01-01',
-  //      PrefixVariable : 'v.'
-   //     ])
-
+        Version_Major = '1'
+        Version_Minor  = '0'
+        Version_Patch  = '0'
         VERSION = VersionNumber([
-        versionNumberString : '${BUILD_MONTH}.${BUILDS_TODAY}.${BUILD_NUMBER}',
+        versionNumberString : '${Version_Major}.${Version_Minor}.${BUILD_NUMBER}',
         projectStartDate : '2020-01-01',
         versionPrefix : 'v.'
         ])
