@@ -22,7 +22,7 @@ pipeline {
             steps {
                 dir( "$VERSION" ) {
                     checkout changelog: false, poll: false, scm: [$class: 'GitSCM',
-                             branches: [[name: '*/master']],
+                             branches: [[name: '*/jenkins']],
                              doGenerateSubmoduleConfigurations: false,
                              extensions: [],
                              submoduleCfg: [],
