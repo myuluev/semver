@@ -30,5 +30,11 @@ pipeline {
                 }
             }
         }
+        stage ('Test & Build') {
+            sh """
+                yarn test --watchAll=false
+                yarn run react-scripts build
+            """
+        }
     }
 }
