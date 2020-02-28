@@ -20,7 +20,7 @@ pipeline {
         }
         stage ('checkout') {
             steps {
-                dir('"$VERSION"') {
+                dir('$VERSION') {
                     checkout changelog: false, poll: false, scm: [$class: 'GitSCM',
                              branches: [[name: '*/master']],
                              doGenerateSubmoduleConfigurations: false,
