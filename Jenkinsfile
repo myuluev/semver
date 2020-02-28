@@ -30,6 +30,15 @@ pipeline {
                 }
             }
         }
+        stage ('Install dependencies') {
+            steps {
+                sh """
+                    virtualenv -p python3 venv
+                    . venv/bin/activate
+                    yarn install --frozen-lockfile
+                """
+            }
+        }
         stage ('Test & Build') {
             steps {
                 sh """
