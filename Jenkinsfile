@@ -26,7 +26,7 @@ pipeline {
                              doGenerateSubmoduleConfigurations: false,
                              extensions: [],
                              submoduleCfg: [],
-                             userRemoteConfigs: [[credentialsId: 'm.uluyev@gmail.com', url: 'https://github.com/myuluev/semver.git']]]
+                             userRemoteConfigs: [[credentialsId: '', url: 'git@github.com:scalyr/scalyr-frontend.git']]]
                 }
             }
         }
